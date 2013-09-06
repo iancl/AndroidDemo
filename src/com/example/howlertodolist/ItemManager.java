@@ -42,8 +42,12 @@ public class ItemManager {
 	// remove item and its image
 	public void removeItem(Item item){
 		
-		File file = new File(item.getImageUri().getPath());
-		file.delete();
+		if(item.getImageUri() != null){
+			File file = new File(item.getImageUri().getPath());
+			file.delete();
+		}
+		
+		
 		
 		allItems.remove(item);
 	}
